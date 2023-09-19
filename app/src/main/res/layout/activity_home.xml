@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    android:background="@color/black"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="@string/login"
+        android:textColor="@color/colorWhite"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/lgEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorTextBackground"
+        android:fontFamily="@font/gilroy_light"
+        android:hint="@string/enter_email"
+        android:padding="10dp"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:textColorHint="@color/colorDarkGray"
+
+        android:inputType="textEmailAddress">
+
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/lgPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorTextBackground"
+        android:fontFamily="@font/gilroy_light"
+        android:textColorHint="@color/colorDarkGray"
+
+        android:hint="@string/enter_password"
+        android:padding="10dp"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:autofillHints=""
+        android:inputType="textPassword"
+        tools:ignore="TextFields" />
+
+
+    <Button
+        android:id="@+id/lgLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_margin="15dp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/btn_login"/>
+
+    <Button
+        android:id="@+id/lgSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/colorDarkGray"
+        android:textColor="@color/colorAccent"
+        android:text="@string/btn_signup"/>
+
+
+
+</LinearLayout>

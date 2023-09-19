@@ -77,6 +77,10 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("de.hdodenhod:circleimageview:3.1.0")
+
+
 
     //firebase
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
@@ -84,4 +88,5 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.1.2")
     implementation("com.google.firebase:firebase-database:20.2.2")
     implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.google.firebase:firebase-storage:20.2.1")
 }

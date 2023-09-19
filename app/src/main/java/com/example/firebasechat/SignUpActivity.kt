@@ -50,12 +50,12 @@ class SignUpActivity : AppCompatActivity() {
 
         }
 
-//        binding.btnLogin.setOnClickListener {
-//            val intent = Intent(this@SignUpActivity,
-//                LoginActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(this@SignUpActivity,
+                LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 
@@ -78,6 +78,10 @@ class SignUpActivity : AppCompatActivity() {
                     hashMap.put("Profile_Image", "")
                     databaseReference.setValue(hashMap).addOnCompleteListener(this) {
                         if (it.isSuccessful) {
+                            binding.etName.setText("")
+                            binding.etEmail.setText("")
+                            binding.etPassword.setText("")
+                            binding.etConfirmPassword.setText("")
                             val intent = Intent(this@SignUpActivity, HomeActivity::class.java)
                             startActivity(intent)
                         }
@@ -86,10 +90,3 @@ class SignUpActivity : AppCompatActivity() {
             }
     }
 }
-
-
-
-
-
-
-

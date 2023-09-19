@@ -15,10 +15,10 @@
         android:theme="@style/Theme.FirebaseChat"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -28,8 +28,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".SignUpActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
             android:name=".HomeActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
     </application>
 
 </manifest>
