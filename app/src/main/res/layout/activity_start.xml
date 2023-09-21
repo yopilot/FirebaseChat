@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDE3E3"
+    tools:context=".activity.StartActivity">
+
+    <FrameLayout
+        android:id="@+id/fragments_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_bar" />
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="375dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/bottom_nav"
+        app:abb_badgeBackgroundColor="@color/Black"
+        app:abb_badgeTextColor="@color/Black"
+        app:abb_iconSize="30dp"
+        app:abb_indicatorAnimation="slide"
+        app:abb_indicatorAppearance="square"
+        app:abb_indicatorColor="@color/Black"
+        app:abb_indicatorHeight="16dp"
+        app:abb_indicatorLocation="bottom"
+        app:abb_indicatorMargin="25dp"
+        app:abb_rippleColor="@color/Black"
+        app:abb_selectedIndex="1"
+        app:abb_selectedTabType="text"
+        app:abb_tabColorSelected="@color/Black"
+        app:abb_tabs="@menu/bottom_navigation_menu"
+        app:abb_textAppearance="@font/poppins_bold"
+        app:abb_textSize="18dp"
+        app:abb_textStyle="bold" />
+
+</RelativeLayout>

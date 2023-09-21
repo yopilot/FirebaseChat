@@ -9,8 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="text">#464646</color>
     <color name="ColorTextBG">#f5f5f5</color>
-    <color name="colorPrimary">#813fd7</color>
     <color name="colorPrimaryDark">#813fd7</color>
+    <color name="colorPrimary">#813fd7</color>
+
     <color name="colorAccent">#FFFFFF</color>
     <color name="Black">#464646</color>
     <color name="colorDarkGray">#464646</color>
@@ -18,4 +19,26 @@
     <color name="colorItemLeft">#E6E4E4</color>
     <color name="colorItemRight">#813fd7</color>
     <color name="colorWhite">#fff</color>
+    <color name="nav_bg">#fff</color>
+    <color name="bg_white">#EEEEEE</color>
+    <color name="bg">@color/bg_white</color>
+    <color name="nav_tab">#40000000</color>
+    <color name="nav_tab_disabled">#19000000</color>
+    <color name="home">#1194AA</color>
+    <color name="like">#C9379D</color>
+    <color name="notification">#B5E8B7</color>
+    <color name="profile">#5B37B7</color>
+    <color name="home_20">#331194AA</color>
+    <color name="like_20">#33C9379D</color>
+    <color name="notification_20">#9B9FC6</color>
+    <color name="profile_20">#335B37B7</color>
+
+
+
+
+
+
+
+
+
 </resources>
