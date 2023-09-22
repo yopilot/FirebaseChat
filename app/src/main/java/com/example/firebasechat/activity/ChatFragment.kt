@@ -13,7 +13,6 @@ import com.example.firebasechat.databinding.FragmentChatBinding
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
