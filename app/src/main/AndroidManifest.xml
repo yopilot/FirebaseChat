@@ -20,13 +20,9 @@
             android:name=".activity.ExpandedArticleActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ProfileActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat" />
-        <activity
             android:name=".activity.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,11 +32,11 @@
         <activity
             android:name=".activity.SignUpActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".activity.StartActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

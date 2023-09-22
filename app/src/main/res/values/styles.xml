@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="search2">
+        <item name="android:src">@drawable/search1</item>
+    </style>
+    <style name="SearchViewStyle">
+        <item name="android:textColorHint">#77000000</item>
+    </style>
+
     <style name="NavBarText">
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">@font/poppins_bold</item>

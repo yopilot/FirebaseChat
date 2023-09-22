@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Filter
 import android.widget.Filterable
 import android.widget.SearchView
@@ -11,13 +12,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.firebasechat.R
-import com.example.firebasechat.databinding.FragmentBookBinding
 import com.example.firebasechat.databinding.ArticlesBinding
+import com.example.firebasechat.databinding.FragmentBookBinding
 import com.google.android.material.snackbar.Snackbar
 import data.ArticleContent
 import data.ArticleNumbers
 import data.ArticleTitles
+
 
 data class Article(val number: String, val title: String, val content: String)
 
@@ -53,6 +54,13 @@ class BookFragment : Fragment() {
         adapter = ArticleAdapter(articlesList)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
+// Get the EditText inside the SearchView
+
+
+// Change the hint text color
+
+// Change the hint text color
+
 
         val searchView = binding.searchView // Use View Binding to access views
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -112,7 +120,7 @@ class ArticleAdapter(private val articles: List<Article>) :
                 articleContentTextView.maxLines = Int.MAX_VALUE
             } else {
                 // Collapse the item (show truncated content)
-                articleContentTextView.maxLines = 5 // Adjust as needed
+                articleContentTextView.maxLines = 0 // Adjust as needed
             }
         }
     }
@@ -125,7 +133,7 @@ class ArticleAdapter(private val articles: List<Article>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article = filteredArticles[position]
         holder.articleTitleTextView.text = article.title
-        holder.articleNumberTextView.text = "Article ${article.number}:"
+        holder.articleNumberTextView.text = "ARTICLE - ${article.number}"
         holder.articleContentTextView.text = article.content
     }
 

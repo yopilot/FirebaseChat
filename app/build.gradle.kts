@@ -109,6 +109,7 @@ dependencies {
     implementation("com.google.firebase:firebase-storage:20.2.1")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation ("androidx.core:core-animation:1.0.0-rc01")
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
 
 
 }
