@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/rounded_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color= "@color/purple" /> <!-- Use your desired purple color code here -->
+    <corners android:radius="25dp" /> <!-- Adjust the radius to control the roundness -->
+</shape>
