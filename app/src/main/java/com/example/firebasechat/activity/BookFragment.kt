@@ -1,15 +1,18 @@
 package com.example.firebasechat.activity
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Filter
 import android.widget.Filterable
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebasechat.databinding.ArticlesBinding
@@ -18,7 +21,6 @@ import com.google.android.material.snackbar.Snackbar
 import data.ArticleContent
 import data.ArticleNumbers
 import data.ArticleTitles
-
 
 data class Article(val number: String, val title: String, val content: String)
 
@@ -51,16 +53,9 @@ class BookFragment : Fragment() {
         }
 
         val recyclerView = binding.recyclerView // Use View Binding to access views
-        adapter = ArticleAdapter(articlesList)
+        adapter = ArticleAdapter(articlesList, parentFragmentManager)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
-// Get the EditText inside the SearchView
-
-
-// Change the hint text color
-
-// Change the hint text color
-
 
         val searchView = binding.searchView // Use View Binding to access views
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -78,7 +73,7 @@ class BookFragment : Fragment() {
     }
 }
 
-class ArticleAdapter(private val articles: List<Article>) :
+class ArticleAdapter(private val articles: List<Article>, private val fragmentManager: FragmentManager) :
     RecyclerView.Adapter<ArticleAdapter.ViewHolder>(), Filterable {
 
     private var filteredArticles: List<Article> = articles
@@ -90,37 +85,15 @@ class ArticleAdapter(private val articles: List<Article>) :
         val articleNumberTextView: TextView = binding.articleNumberTextView
         val articleContentTextView: TextView = binding.articleContentTextView
 
-        private var isExpanded = false
-
         init {
-            // Set an OnClickListener to the root view (CardView or other container)
+            // Set an OnClickListener to open a dialog with article details
             binding.root.setOnClickListener {
-                if (canExpand()) {
-                    // Toggle the expanded state
-                    isExpanded = !isExpanded
-                    // Call a function to update the UI based on the expanded state
-                    updateUI()
-                } else {
-                    // Display a Snackbar error message when there is nothing to expand
-                    Snackbar.make(binding.root, "Nothing to expand", Snackbar.LENGTH_SHORT).show()
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val article = filteredArticles[position]
+                    val dialogFragment = ArticleDetailsDialogFragment(article)
+                    dialogFragment.show(fragmentManager, "article_details_dialog")
                 }
-            }
-        }
-
-        // Function to check if the item can be expanded
-        private fun canExpand(): Boolean {
-            // Check if the number of lines in the TextView is greater than or equal to 5
-            return articleContentTextView.lineCount >= 5
-        }
-
-        // Function to update the UI based on the expanded state
-        private fun updateUI() {
-            if (isExpanded) {
-                // Expand the item (show complete content)
-                articleContentTextView.maxLines = Int.MAX_VALUE
-            } else {
-                // Collapse the item (show truncated content)
-                articleContentTextView.maxLines = 0 // Adjust as needed
             }
         }
     }
@@ -139,6 +112,21 @@ class ArticleAdapter(private val articles: List<Article>) :
 
     override fun getItemCount(): Int {
         return filteredArticles.size
+    }
+    class ArticleDetailsDialogFragment(private val article: Article) : DialogFragment() {
+
+        override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+            return activity?.let {
+                val builder = AlertDialog.Builder(it)
+                builder.setTitle("Article Details")
+                    .setMessage("Number: ${article.number}\nTitle: ${article.title}\nContent: ${article.content}")
+                    .setPositiveButton("Close") { _, _ ->
+                        // Close the dialog
+                        dialog?.dismiss()
+                    }
+                builder.create()
+            } ?: throw IllegalStateException("Activity cannot be null")
+        }
     }
 
     override fun getFilter(): Filter {
